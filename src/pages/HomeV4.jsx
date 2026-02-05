@@ -9,7 +9,7 @@ const IMAGES = {
     'https://swigs.online/uploads/kozelsky/1770039736918-802731963.webp',
     'https://swigs.online/uploads/kozelsky/1770039737276-978932392.webp',
     'https://swigs.online/uploads/kozelsky/1770039737716-863842881.webp',
-    'https://swigs.online/uploads/kozelsky/1770039737489-515024691.webp',
+    'https://swigs.online/uploads/kozelsky/1770039738151-670307754.webp',
   ],
   bus: [
     'https://swigs.online/uploads/kozelsky/1770039666874-770981752.webp',

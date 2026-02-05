@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
   // Check if we're on a bus page
   const isBusSection = location.pathname.startsWith('/bus-11-97');
 
-  // Navigation principale Kozelsky with V2/V3/V4 submenus
+  // Navigation principale Kozelsky with all version submenus
   const mainNavigation = [
     {
       name: t('nav.home'),
@@ -103,7 +103,9 @@ const Layout = ({ children }) => {
       submenu: [
         { name: 'Original', path: '/bus-11-97' },
         { name: 'V2', path: '/bus-11-97/v2' },
+        { name: 'V3 (Dark)', path: '/bus-11-97/v3' },
         { name: 'V4 (Rounded)', path: '/bus-11-97/v4' },
+        { name: 'V5 (Full Dark)', path: '/bus-11-97/v5' },
       ],
     },
     {
@@ -134,7 +136,9 @@ const Layout = ({ children }) => {
       submenu: [
         { name: 'Original', path: '/bus-11-97' },
         { name: 'V2', path: '/bus-11-97/v2' },
+        { name: 'V3 (Dark)', path: '/bus-11-97/v3' },
         { name: 'V4 (Rounded)', path: '/bus-11-97/v4' },
+        { name: 'V5 (Full Dark)', path: '/bus-11-97/v5' },
       ],
     },
     {
@@ -143,7 +147,9 @@ const Layout = ({ children }) => {
       submenu: [
         { name: 'Original', path: '/bus-11-97/equipment' },
         { name: 'V2', path: '/bus-11-97/v2/equipment' },
+        { name: 'V3 (Dark)', path: '/bus-11-97/v3/equipment' },
         { name: 'V4 (Rounded)', path: '/bus-11-97/v4/equipment' },
+        { name: 'V5 (Full Dark)', path: '/bus-11-97/v5/equipment' },
       ],
     },
     {
@@ -152,7 +158,9 @@ const Layout = ({ children }) => {
       submenu: [
         { name: 'Original', path: '/bus-11-97/team' },
         { name: 'V2', path: '/bus-11-97/v2/team' },
+        { name: 'V3 (Dark)', path: '/bus-11-97/v3/team' },
         { name: 'V4 (Rounded)', path: '/bus-11-97/v4/team' },
+        { name: 'V5 (Full Dark)', path: '/bus-11-97/v5/team' },
       ],
     },
     {
@@ -161,7 +169,9 @@ const Layout = ({ children }) => {
       submenu: [
         { name: 'Original', path: '/bus-11-97/services' },
         { name: 'V2', path: '/bus-11-97/v2/services' },
+        { name: 'V3 (Dark)', path: '/bus-11-97/v3/services' },
         { name: 'V4 (Rounded)', path: '/bus-11-97/v4/services' },
+        { name: 'V5 (Full Dark)', path: '/bus-11-97/v5/services' },
       ],
     },
     {
@@ -170,7 +180,9 @@ const Layout = ({ children }) => {
       submenu: [
         { name: 'Original', path: '/bus-11-97/history' },
         { name: 'V2', path: '/bus-11-97/v2/history' },
+        { name: 'V3 (Dark)', path: '/bus-11-97/v3/history' },
         { name: 'V4 (Rounded)', path: '/bus-11-97/v4/history' },
+        { name: 'V5 (Full Dark)', path: '/bus-11-97/v5/history' },
       ],
     },
     {
@@ -179,6 +191,7 @@ const Layout = ({ children }) => {
       submenu: [
         { name: 'Original', path: '/contact' },
         { name: 'V2', path: '/contact/v2' },
+        { name: 'V3', path: '/contact/v3' },
         { name: 'V4 (Rounded)', path: '/contact/v4' },
       ],
     },
