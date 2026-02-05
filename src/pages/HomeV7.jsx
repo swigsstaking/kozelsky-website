@@ -22,12 +22,6 @@ const IMAGES = {
     'https://swigs.online/uploads/kozelsky/1770040779195-635217521.webp',
     'https://swigs.online/uploads/kozelsky/1770040779617-662408557.webp',
   ],
-  impressions: [
-    'https://swigs.online/uploads/kozelsky/1770040779195-635217521.webp',
-    'https://swigs.online/uploads/kozelsky/1770040779617-662408557.webp',
-    'https://swigs.online/uploads/kozelsky/1770040777537-755205822.webp',
-    'https://swigs.online/uploads/kozelsky/1770040776743-362731661.webp',
-  ],
 };
 
 const partners = [
@@ -47,8 +41,9 @@ const HomeV7 = () => {
       theCaterer: 'Le Traiteur',
       theBus: 'Le Bus',
       welcomeOnBoard: 'Bienvenue à bord',
-      customService: 'Service sur-mesure',
+      customService: 'Sur-mesure',
       ourHall: 'Notre salle',
+      discover: 'Découvrir',
     },
     de: {
       contactUs: 'Kontaktieren Sie uns',
@@ -56,8 +51,9 @@ const HomeV7 = () => {
       theCaterer: 'Der Caterer',
       theBus: 'Der Bus',
       welcomeOnBoard: 'Willkommen an Bord',
-      customService: 'Maßgeschneiderter Service',
+      customService: 'Maßgeschneidert',
       ourHall: 'Unser Saal',
+      discover: 'Entdecken',
     },
     en: {
       contactUs: 'Contact us',
@@ -65,8 +61,9 @@ const HomeV7 = () => {
       theCaterer: 'The Caterer',
       theBus: 'The Bus',
       welcomeOnBoard: 'Welcome on board',
-      customService: 'Custom service',
+      customService: 'Custom',
       ourHall: 'Our hall',
+      discover: 'Discover',
     },
   };
 
@@ -76,96 +73,63 @@ const HomeV7 = () => {
     <>
       <SEOHead page="home" />
 
-      {/* Hero Section - Images complètes sans crop */}
-      <section className="py-16 lg:py-24 bg-[#F2F5F7]">
-        <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Content */}
-            <div className="order-2 lg:order-1">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-secondary-900 mb-8 leading-[1.1]">
+      {/* Hero Section - Grande image plein écran style kozelsky.ch */}
+      <section className="relative min-h-[90vh] flex items-center bg-secondary-900 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src={IMAGES.hero[0]}
+            alt="Kozelsky Catering"
+            className="w-full h-full object-cover opacity-60"
+          />
+        </div>
+
+        {/* Content overlay */}
+        <div className="relative z-10 container-site py-20">
+          <div className="max-w-3xl">
+            <div className="bg-accent-500/90 p-10 lg:p-14">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-[1.1]">
                 {t('home.hero.title')}
               </h1>
-              <p className="text-secondary-600 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg">
-                {t('home.since2021.companyDesc')}
-              </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 px-10 py-5 bg-[#ffcd57] text-secondary-900 rounded-full hover:bg-[#f5c342] transition-all font-semibold text-lg shadow-lg shadow-[#ffcd57]/30"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-secondary-900 hover:bg-secondary-100 transition-all font-medium"
               >
                 {c.contactUs}
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </Link>
-            </div>
-
-            {/* Hero Images - object-contain pour voir l'image entière */}
-            <div className="order-1 lg:order-2 grid grid-cols-2 gap-4 lg:gap-6">
-              <div className="bg-white rounded-3xl shadow-xl overflow-hidden p-2">
-                <img
-                  src={IMAGES.hero[0]}
-                  alt="Kozelsky Catering"
-                  className="w-full h-auto rounded-2xl"
-                />
-              </div>
-              <div className="bg-white rounded-3xl shadow-xl overflow-hidden p-2 mt-8 lg:mt-12">
-                <img
-                  src={IMAGES.hero[1]}
-                  alt="Kozelsky Service"
-                  className="w-full h-auto rounded-2xl"
-                />
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Depuis 2021 - Notre Entreprise */}
-      <section className="py-24 lg:py-32 bg-white">
+      {/* Depuis 2021 - Style kozelsky.ch */}
+      <section className="py-24 lg:py-32 bg-[#F2F5F7]">
         <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Images Grid */}
-            <div className="grid grid-cols-2 gap-4 lg:gap-6">
-              <div className="space-y-4 lg:space-y-6">
-                <div className="bg-[#F2F5F7] rounded-3xl p-2">
-                  <img
-                    src={IMAGES.catering[0]}
-                    alt="Catering 1"
-                    className="w-full h-auto rounded-2xl"
-                  />
-                </div>
-              </div>
-              <div className="space-y-4 lg:space-y-6 pt-8 lg:pt-12">
-                <div className="bg-[#F2F5F7] rounded-3xl p-2">
-                  <img
-                    src={IMAGES.catering[1]}
-                    alt="Catering 2"
-                    className="w-full h-auto rounded-2xl"
-                  />
-                </div>
-                <div className="bg-[#F2F5F7] rounded-3xl p-2">
-                  <img
-                    src={IMAGES.catering[2]}
-                    alt="Catering 3"
-                    className="w-full h-auto rounded-2xl"
-                  />
-                </div>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            {/* Titre à gauche */}
+            <div>
+              <h2 className="text-6xl md:text-7xl lg:text-8xl font-serif text-secondary-900 leading-none">
+                {t('home.since2021.title')}
+              </h2>
             </div>
 
-            {/* Content */}
-            <div className="lg:pl-8">
-              <p className="text-[#060097] uppercase tracking-[0.3em] text-sm font-semibold mb-6">Kozelsky Catering</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-secondary-900 mb-10 leading-tight">{t('home.since2021.title')}</h2>
-
-              <div className="mb-10">
-                <h3 className="text-xl lg:text-2xl font-serif text-secondary-900 mb-4">{t('home.since2021.ourCompany')}</h3>
-                <p className="text-secondary-600 leading-relaxed text-base lg:text-lg">
+            {/* Contenu à droite */}
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-lg font-bold text-secondary-900 uppercase tracking-wider mb-4">
+                  {t('home.since2021.ourCompany')}
+                </h3>
+                <p className="text-secondary-600 leading-relaxed text-lg">
                   {t('home.since2021.companyDesc')}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl lg:text-2xl font-serif text-secondary-900 mb-4">{t('home.since2021.ourValues')}</h3>
-                <p className="text-secondary-600 leading-relaxed text-base lg:text-lg">
+                <h3 className="text-lg font-bold text-secondary-900 uppercase tracking-wider mb-4">
+                  {t('home.since2021.ourValues')}
+                </h3>
+                <p className="text-secondary-600 leading-relaxed text-lg">
                   {t('home.since2021.valuesDesc')}
                 </p>
               </div>
@@ -174,131 +138,139 @@ const HomeV7 = () => {
         </div>
       </section>
 
-      {/* Services Cards */}
-      <section className="py-24 lg:py-32 bg-[#F2F5F7]">
-        <div className="container-site">
-          <div className="text-center mb-16">
-            <p className="text-[#060097] uppercase tracking-[0.3em] text-sm font-semibold mb-6">{c.ourServices}</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-secondary-900">{t('home.services.title')}</h2>
+      {/* Le Traiteur - Grande image à gauche style kozelsky.ch */}
+      <section className="bg-[#F2F5F7]">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Grande image à gauche - pleine hauteur */}
+          <div className="relative min-h-[500px] lg:min-h-[700px]">
+            <img
+              src={IMAGES.hero[1]}
+              alt="Le Traiteur"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Le Traiteur */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="p-3">
-                <img
-                  src={IMAGES.catering[0]}
-                  alt="Le Traiteur"
-                  className="w-full h-auto rounded-2xl group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 lg:p-8 pt-2">
-                <h3 className="text-xl lg:text-2xl font-serif text-secondary-900 mb-3">{c.theCaterer}</h3>
-                <p className="text-secondary-600 mb-5 text-sm lg:text-base">{t('home.caterer.desc')}</p>
-                <Link
-                  to="/catering"
-                  className="inline-flex items-center gap-2 text-[#060097] font-semibold hover:gap-4 transition-all text-sm lg:text-base"
-                >
-                  {t('cta.discover')}
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Sur-mesure */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="p-3">
-                <img
-                  src={IMAGES.catering[1]}
-                  alt="Sur-mesure"
-                  className="w-full h-auto rounded-2xl group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 lg:p-8 pt-2">
-                <h3 className="text-xl lg:text-2xl font-serif text-secondary-900 mb-3">{c.customService}</h3>
-                <p className="text-secondary-600 mb-5 text-sm lg:text-base">{t('home.custom.desc')}</p>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 text-[#060097] font-semibold hover:gap-4 transition-all text-sm lg:text-base"
-                >
-                  {t('cta.discover')}
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
-            </div>
-
-            {/* La Salle */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="p-3">
-                <img
-                  src={IMAGES.welcome[0]}
-                  alt="Notre salle"
-                  className="w-full h-auto rounded-2xl group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 lg:p-8 pt-2">
-                <h3 className="text-xl lg:text-2xl font-serif text-secondary-900 mb-3">{c.ourHall}</h3>
-                <p className="text-secondary-600 mb-5 text-sm lg:text-base">{t('home.welcome.hallDesc')}</p>
-                <Link
-                  to="/nous"
-                  className="inline-flex items-center gap-2 text-[#060097] font-semibold hover:gap-4 transition-all text-sm lg:text-base"
-                >
-                  {t('cta.discover')}
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
+          {/* Contenu à droite */}
+          <div className="flex items-center p-10 lg:p-20 bg-white">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-secondary-900 mb-6 italic">
+                {c.theCaterer}
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-8">
+                {t('home.caterer.desc')}
+              </p>
+              <Link
+                to="/catering"
+                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-accent-500 text-accent-600 hover:bg-accent-500 hover:text-white transition-all font-medium"
+              >
+                {c.discover}
+                <ArrowRight size={18} />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Bus 11-97 Promo */}
-      <section className="py-24 lg:py-32 bg-secondary-900 text-white">
-        <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="text-center lg:text-left">
-              <img
-                src={IMAGES.logo1197}
-                alt="11-97.ch"
-                className="h-16 lg:h-24 mb-8 mx-auto lg:mx-0 brightness-0 invert"
-              />
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif mb-6">
-                {c.theBus}
+      {/* Sur-mesure - Image à droite */}
+      <section className="bg-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Contenu à gauche */}
+          <div className="flex items-center p-10 lg:p-20 order-2 lg:order-1">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-secondary-900 mb-6 italic">
+                {c.customService}
               </h2>
-              <p className="text-secondary-300 text-base lg:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
-                {t('home.bus.desc')}
+              <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+                {t('home.custom.desc')}
+              </p>
+              <p className="text-secondary-900 font-semibold text-lg">
+                {t('home.custom.minPersons')}
+              </p>
+            </div>
+          </div>
+
+          {/* Grande image à droite */}
+          <div className="relative min-h-[500px] lg:min-h-[700px] order-1 lg:order-2">
+            <img
+              src={IMAGES.catering[0]}
+              alt="Sur-mesure"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Notre Salle - Grande image */}
+      <section className="bg-[#F2F5F7]">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Grande image à gauche */}
+          <div className="relative min-h-[500px] lg:min-h-[700px]">
+            <img
+              src={IMAGES.welcome[0]}
+              alt="Notre salle"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Contenu à droite */}
+          <div className="flex items-center p-10 lg:p-20 bg-white">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-secondary-900 mb-6 italic">
+                {c.ourHall}
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-8">
+                {t('home.welcome.hallDesc')}
               </p>
               <Link
-                to="/bus-11-97"
-                className="inline-flex items-center gap-3 px-8 lg:px-10 py-4 lg:py-5 bg-[#ffcd57] text-secondary-900 rounded-full hover:bg-[#f5c342] transition-colors font-semibold text-base lg:text-lg"
+                to="/nous"
+                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-accent-500 text-accent-600 hover:bg-accent-500 hover:text-white transition-all font-medium"
               >
-                {c.welcomeOnBoard}
-                <ArrowRight size={20} />
+                {c.discover}
+                <ArrowRight size={18} />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="grid grid-cols-2 gap-4 lg:gap-6">
-              <div className="bg-secondary-800 rounded-3xl p-2">
-                <img
-                  src={IMAGES.bus[0]}
-                  alt="Bus 11-97"
-                  className="w-full h-auto rounded-2xl"
-                />
-              </div>
-              <div className="bg-secondary-800 rounded-3xl p-2 mt-8 lg:mt-12">
-                <img
-                  src={IMAGES.bus[1]}
-                  alt="Bus Interior"
-                  className="w-full h-auto rounded-2xl"
-                />
-              </div>
-            </div>
+      {/* Bus 11-97 - Plein écran sombre */}
+      <section className="relative min-h-[80vh] flex items-center bg-secondary-900 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src={IMAGES.bus[0]}
+            alt="Bus 11-97"
+            className="w-full h-full object-cover opacity-50"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container-site py-20">
+          <div className="max-w-2xl">
+            <img
+              src={IMAGES.logo1197}
+              alt="11-97.ch"
+              className="h-24 lg:h-32 mb-10 brightness-0 invert"
+            />
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6">
+              {c.theBus}
+            </h2>
+            <p className="text-white/80 text-lg lg:text-xl leading-relaxed mb-10">
+              {t('home.bus.desc')}
+            </p>
+            <Link
+              to="/bus-11-97"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-accent-500 text-white hover:bg-accent-600 transition-colors font-medium"
+            >
+              {c.welcomeOnBoard}
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Partners */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F2F5F7]">
         <div className="container-site">
           <h2 className="text-center text-sm uppercase tracking-[0.3em] text-secondary-500 mb-12">
             {t('home.partners')}
@@ -310,7 +282,7 @@ const HomeV7 = () => {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 lg:p-6 bg-[#F2F5F7] rounded-2xl opacity-70 hover:opacity-100 transition-all hover:shadow-lg"
+                className="p-4 lg:p-6 bg-white opacity-70 hover:opacity-100 transition-all hover:shadow-lg"
               >
                 <img
                   src={partner.logo}
@@ -324,15 +296,17 @@ const HomeV7 = () => {
       </section>
 
       {/* CTA Contact */}
-      <section className="py-24 lg:py-32 bg-[#F2F5F7]">
+      <section className="py-24 lg:py-32 bg-white">
         <div className="container-site text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-secondary-900 mb-6">{t('home.questions.title')}</h2>
-          <p className="text-secondary-600 mb-10 max-w-xl mx-auto text-base lg:text-lg">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-secondary-900 mb-6 italic">
+            {t('home.questions.title')}
+          </h2>
+          <p className="text-secondary-600 mb-10 max-w-xl mx-auto text-lg">
             {t('home.questions.desc')}
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-3 px-10 lg:px-12 py-5 lg:py-6 bg-[#ffcd57] text-secondary-900 rounded-full hover:bg-[#f5c342] transition-all font-semibold text-base lg:text-lg shadow-lg shadow-[#ffcd57]/30"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-accent-500 text-white hover:bg-accent-600 transition-all font-medium text-lg"
           >
             {t('cta.contact')}
             <ArrowRight size={20} />
