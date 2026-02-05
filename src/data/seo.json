@@ -1,0 +1,99 @@
+{
+  "site": {
+    "name": "Kozelsky Catering",
+    "slug": "kozelsky",
+    "domain": "kozelsky.ch",
+    "description": "Traiteur sur-mesure en Valais pour vos événements gourmands - Mariages, anniversaires, entreprises",
+    "logo": "/logo.png"
+  },
+  "pages": {
+    "home": {
+      "title": "Kozelsky Catering | Traiteur sur-mesure en Valais",
+      "description": "Kozelsky Catering, traiteur sur-mesure basé à Sion en Valais. Événements gourmands de qualité depuis 2021 - Mariages, anniversaires, entreprises.",
+      "keywords": ["traiteur", "catering", "valais", "sion", "mariage", "événements", "gastronomie"],
+      "ogTitle": "Kozelsky Catering | Événements gourmands de qualité",
+      "ogDescription": "Traiteur sur-mesure en Valais pour vos événements gourmands",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://kozelsky.ch"
+    },
+    "catering": {
+      "title": "Catering | Kozelsky - Traiteur sur-mesure",
+      "description": "Découvrez notre service traiteur personnalisé. De l'apéritif au menu 5 plats, nous créons des prestations uniques selon vos envies.",
+      "keywords": ["traiteur", "catering", "menu", "gastronomie", "sur-mesure"],
+      "ogTitle": "Service Catering | Kozelsky",
+      "ogDescription": "Vos évènements, notre passion - Traiteur sur-mesure en Valais",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://kozelsky.ch/catering"
+    },
+    "nous": {
+      "title": "Notre Équipe | Kozelsky Catering",
+      "description": "Découvrez Mélanie et Fabian, les fondateurs de Kozelsky Catering. Un couple passionné de gastronomie avec une expérience internationale.",
+      "keywords": ["équipe", "fondateurs", "histoire", "passion", "gastronomie"],
+      "ogTitle": "La Team du Traiteur | Kozelsky",
+      "ogDescription": "Découvrez notre équipe passionnée de gastronomie",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://kozelsky.ch/nous"
+    },
+    "services": {
+      "title": "Nos Services | Kozelsky Catering",
+      "description": "Lieux d'exception, livraison, mise en place, personnel de service qualifié. Découvrez tous nos services pour vos événements.",
+      "keywords": ["services", "livraison", "personnel", "événements", "organisation"],
+      "ogTitle": "Services | Kozelsky Catering",
+      "ogDescription": "Tous nos services pour vos événements",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://kozelsky.ch/services"
+    },
+    "aviation": {
+      "title": "Aviation Privée | Kozelsky Catering",
+      "description": "Service traiteur pour l'aviation privée. L'art de la restauration en vol avec des produits de haute qualité.",
+      "keywords": ["aviation privée", "catering avion", "restauration vol", "haut de gamme"],
+      "ogTitle": "Aviation Privée | Kozelsky Catering",
+      "ogDescription": "L'art de la restauration en vol",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://kozelsky.ch/aviation-privee"
+    },
+    "impressions": {
+      "title": "Nos Réalisations | Kozelsky Catering",
+      "description": "Découvrez nos prestations passées : mariages, repas gastronomiques, événements d'entreprise, Foire du Valais.",
+      "keywords": ["galerie", "photos", "réalisations", "mariages", "événements"],
+      "ogTitle": "Impressions | Kozelsky Catering",
+      "ogDescription": "Découvrez nos réalisations",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://kozelsky.ch/impressions"
+    },
+    "bus": {
+      "title": "Bus 11-97 | Bar Événementiel Unique en Suisse",
+      "description": "Louez notre Bus Impérial Londonien 11-97, un concept unique en Suisse pour vos événements. Bar éphémère, mariages, promotions.",
+      "keywords": ["bus", "bar", "événementiel", "location", "unique", "suisse"],
+      "ogTitle": "Bus 11-97 | Kozelsky Catering",
+      "ogDescription": "Concept unique en Suisse - Bar événementiel en bus londonien",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://kozelsky.ch/bus-11-97"
+    },
+    "contact": {
+      "title": "Contact | Kozelsky Catering",
+      "description": "Contactez Kozelsky Catering pour organiser votre événement. Téléphone, email ou formulaire de contact.",
+      "keywords": ["contact", "devis", "réservation", "téléphone", "email"],
+      "ogTitle": "Nous Contacter | Kozelsky Catering",
+      "ogDescription": "Contactez-nous pour votre prochain événement",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://kozelsky.ch/contact"
+    }
+  },
+  "global": {
+    "siteName": "Kozelsky Catering",
+    "siteUrl": "https://kozelsky.ch",
+    "logo": "/logo.png",
+    "language": "fr",
+    "social": {
+      "facebook": "https://www.facebook.com/Kozelsky.Catering/",
+      "instagram": "https://www.instagram.com/kozelsky_catering/",
+      "linkedin": "https://www.linkedin.com/in/kozelsky-catering-7b9754264/"
+    },
+    "contact": {
+      "phone": "+41 79 217 71 61",
+      "email": "welcome@kozelsky.ch",
+      "address": "Rte du Camping 7, 1963 Vétroz, Suisse"
+    }
+  }
+}

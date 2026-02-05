@@ -1,0 +1,91 @@
+#!/bin/bash
+
+# Script de téléchargement des images Kozelsky
+# Usage: ./download-images.sh
+
+mkdir -p images/{illustrations,logos,partners,catering,aviation,impressions,team,bus}
+
+echo "📥 Téléchargement des illustrations noir et blanc..."
+curl -o images/illustrations/illu-poire-grains.png "https://kozelsky.ch/wp-content/uploads/2023/03/KZ_Web-Illu_Desktop_405x470_04_Klein.png"
+curl -o images/illustrations/illu-champignon.png "https://kozelsky.ch/wp-content/uploads/2023/03/KZ_Web-Illu_Desktop_405x470_05_Klein_Spiegelung.png"
+curl -o images/illustrations/illu-legumes.png "https://kozelsky.ch/wp-content/uploads/2023/03/KZ_Web-Illu_Desktop_405x470_06_Klein_Spiegelung.png"
+curl -o images/illustrations/illu-bus-01.png "https://kozelsky.ch/wp-content/uploads/2023/03/KZ_Web-Illu_Desktop_405x470_01_Klein.png"
+curl -o images/illustrations/illu-bus-02.png "https://kozelsky.ch/wp-content/uploads/2023/03/KZ_Web-Illu_Desktop_405x470_02_Klein.png"
+curl -o images/illustrations/illu-bus-03.png "https://kozelsky.ch/wp-content/uploads/2023/03/KZ_Web-Illu_Desktop_405x470_03_Klein.png"
+curl -o images/illustrations/illu-desert.png "https://kozelsky.ch/wp-content/uploads/2023/03/desert.png"
+curl -o images/illustrations/illu-cream-pie.png "https://kozelsky.ch/wp-content/uploads/2023/03/cream-pie.png"
+curl -o images/illustrations/illu-bus-icon.png "https://kozelsky.ch/wp-content/uploads/2023/03/bus.png"
+curl -o images/illustrations/illu-fruitcake.jpg "https://kozelsky.ch/wp-content/uploads/2023/03/fruitcake.jpg"
+
+echo "🏷️ Téléchargement des logos..."
+curl -o images/logos/logo-kozelsky.png "https://kozelsky.ch/wp-content/uploads/2023/03/Group-461.png"
+curl -o images/logos/logo-kozelsky-white.png "https://kozelsky.ch/wp-content/uploads/2023/02/Kozelsky-Catering-white-1024x759.png"
+curl -o images/logos/logo-kozelsky-catering.png "https://kozelsky.ch/wp-content/uploads/2023/02/Kozelsky-Catering.png"
+curl -o images/logos/logo-11-97.png "https://kozelsky.ch/wp-content/uploads/2023/03/11-97.ch-logo-3.png"
+curl -o images/logos/logo-11-97-presented.png "https://kozelsky.ch/wp-content/uploads/2023/05/Presented-by-Kozelsky-Catering.png"
+
+echo "🤝 Téléchargement des logos partenaires..."
+curl -o images/partners/partner-fvs-group.png "https://kozelsky.ch/wp-content/uploads/2023/05/FVS-Group-Logo.png"
+curl -o images/partners/partner-friderici.png "https://kozelsky.ch/wp-content/uploads/2023/05/Friderici-Special-Logo.png"
+curl -o images/partners/partner-fovahm.png "https://kozelsky.ch/wp-content/uploads/2023/05/Fovahm-Pantone-logo.png"
+curl -o images/partners/partner-praedikat.png "https://kozelsky.ch/wp-content/uploads/2023/06/Pradikat-logo.png"
+curl -o images/partners/partner-die-gmbh.png "https://kozelsky.ch/wp-content/uploads/2023/06/Die-Gmbh-logo.png"
+curl -o images/partners/partner-vaudoise.png "https://kozelsky.ch/wp-content/uploads/2023/06/Vaudoise-logo.png"
+curl -o images/partners/partner-oser-changer.png "https://kozelsky.ch/wp-content/uploads/2023/07/oser-changer-logo-2.png"
+
+echo "📸 Téléchargement des photos Catering..."
+curl -o images/catering/catering-01.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/AB73A0C7-7E6E-4682-AD27-F7AF5946B3A5.jpg"
+curl -o images/catering/catering-02.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/80E972C3-AEDA-4BBA-B332-30607A7B5970.jpg"
+curl -o images/catering/catering-03.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_2798-scaled-1.jpg"
+curl -o images/catering/catering-04.jpeg "https://kozelsky.ch/wp-content/uploads/2025/11/IMG_8457-scaled.jpeg"
+curl -o images/catering/catering-05.jpeg "https://kozelsky.ch/wp-content/uploads/2025/11/IMG_9077-scaled.jpeg"
+curl -o images/catering/catering-06.jpeg "https://kozelsky.ch/wp-content/uploads/2025/11/IMG_7861-scaled.jpeg"
+curl -o images/catering/catering-07.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_2807-scaled-2.jpg"
+curl -o images/catering/catering-08.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1667_2-scaled-1.jpg"
+curl -o images/catering/catering-09.jpeg "https://kozelsky.ch/wp-content/uploads/2025/11/IMG_8907-scaled.jpeg"
+curl -o images/catering/catering-10.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/D87A00DE-4037-4A0B-AC41-3EA49BAC6A37.jpg"
+curl -o images/catering/catering-11.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1847-scaled-1.jpg"
+curl -o images/catering/catering-12.jpeg "https://kozelsky.ch/wp-content/uploads/2025/11/IMG_8738-scaled.jpeg"
+
+echo "✈️ Téléchargement des photos Aviation..."
+curl -o images/aviation/aviation-01.jpeg "https://kozelsky.ch/wp-content/uploads/2024/12/IMG_6856-scaled.jpeg"
+curl -o images/aviation/aviation-02.jpeg "https://kozelsky.ch/wp-content/uploads/2024/04/IMG_6768-scaled.jpeg"
+curl -o images/aviation/aviation-03.jpg "https://kozelsky.ch/wp-content/uploads/2025/11/2bc782de-8cde-4474-9fa3-e41ec626582d.jpg"
+curl -o images/aviation/aviation-04.jpeg "https://kozelsky.ch/wp-content/uploads/2024/04/IMG_5823-scaled.jpeg"
+curl -o images/aviation/aviation-05.jpeg "https://kozelsky.ch/wp-content/uploads/2024/12/IMG_6597-scaled.jpeg"
+curl -o images/aviation/aviation-06.jpeg "https://kozelsky.ch/wp-content/uploads/2024/12/IMG_5429-scaled.jpeg"
+curl -o images/aviation/aviation-07.jpeg "https://kozelsky.ch/wp-content/uploads/2024/12/IMG_6655-scaled.jpeg"
+curl -o images/aviation/aviation-08.jpeg "https://kozelsky.ch/wp-content/uploads/2024/12/IMG_5764-2-scaled.jpeg"
+curl -o images/aviation/aviation-09.jpeg "https://kozelsky.ch/wp-content/uploads/2024/12/IMG_6873-scaled.jpeg"
+curl -o images/aviation/aviation-10.jpeg "https://kozelsky.ch/wp-content/uploads/2024/04/IMG_5221-scaled.jpeg"
+
+echo "🎉 Téléchargement des photos Impressions..."
+curl -o images/impressions/impressions-mariage-01.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_0894_2-scaled-1.jpg"
+curl -o images/impressions/impressions-mariage-02.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1369_2-scaled-1.jpg"
+curl -o images/impressions/impressions-mariage-03.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1421_2-1-scaled-1.jpg"
+curl -o images/impressions/impressions-mariage-04.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1474_2-1-scaled-1.jpg"
+curl -o images/impressions/impressions-mariage-05.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1375_2-scaled-1.jpg"
+curl -o images/impressions/impressions-mariage-06.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_0871_2-scaled-1.jpg"
+curl -o images/impressions/impressions-foire-01.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1833-scaled-1.jpg"
+curl -o images/impressions/impressions-foire-02.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1860-scaled-1.jpg"
+curl -o images/impressions/impressions-foire-03.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1856-scaled-1.jpg"
+curl -o images/impressions/impressions-foire-04.jpg "https://kozelsky.ch/wp-content/uploads/2023/06/IMG_1852-scaled-1.jpg"
+curl -o images/impressions/impressions-event-01.jpeg "https://kozelsky.ch/wp-content/uploads/2025/11/IMG_7111-scaled.jpeg"
+curl -o images/impressions/impressions-event-02.jpeg "https://kozelsky.ch/wp-content/uploads/2025/11/IMG_9512-scaled.jpeg"
+
+echo "👥 Téléchargement des photos Équipe..."
+curl -o images/team/team-chef.jpg "https://kozelsky.ch/wp-content/uploads/2023/02/wir-chef.jpg"
+
+echo "🚌 Téléchargement des photos Bus 11-97..."
+curl -o images/bus/bus-hero.jpg "https://kozelsky.ch/wp-content/uploads/2023/03/Catering-bar.jpg"
+curl -o images/bus/bus-interior.png "https://kozelsky.ch/wp-content/uploads/2023/03/Capture-decran-2023-04-30-a-18.27.36.png"
+curl -o images/bus/bus-photo.png "https://kozelsky.ch/wp-content/uploads/2023/03/1197-bus.png"
+curl -o images/bus/bus-shooting.png "https://kozelsky.ch/wp-content/uploads/2023/02/Shhting-Monday.png"
+
+echo "🏠 Téléchargement de l'image Home hero..."
+curl -o images/home-hero.jpeg "https://kozelsky.ch/wp-content/uploads/2025/11/IMG_9465-scaled.jpeg"
+
+echo ""
+echo "✅ Téléchargement terminé !"
+echo "📁 Images disponibles dans le dossier ./images/"
+ls -la images/
