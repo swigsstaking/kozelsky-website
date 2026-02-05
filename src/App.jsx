@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import HomeV4 from './pages/HomeV4';
 import HomeV5 from './pages/HomeV5';
 import HomeV6 from './pages/HomeV6';
+import HomeV7 from './pages/HomeV7';
 import Catering from './pages/Catering';
 import CateringV2 from './pages/CateringV2';
 import CateringV4 from './pages/CateringV4';
@@ -68,6 +69,7 @@ function App() {
               <Route path="/v2" element={<HomeV5 />} />
               <Route path="/v3" element={<HomeV6 />} />
               <Route path="/v4" element={<HomeV4 />} />
+              <Route path="/v5" element={<HomeV7 />} />
 
               {/* Catering */}
               <Route path="/catering" element={<Catering />} />

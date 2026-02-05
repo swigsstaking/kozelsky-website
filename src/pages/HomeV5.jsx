@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const IMAGES = {
-  hero: [
-    'https://swigs.online/uploads/kozelsky/1770287934724-703344864.webp',
-    'https://swigs.online/uploads/kozelsky/1770287934404-213249432.webp',
-  ],
+  heroVideo: 'https://swigs.online/uploads/kozelsky/1770114967497-666715467.webm#t=10',
+  heroFallback: 'https://swigs.online/uploads/kozelsky/1770040860124-33442328.webp',
   logo1197: 'https://swigs.online/uploads/kozelsky/1770040801871-137372873.png',
+  illuBusIcon: 'https://swigs.online/uploads/kozelsky/1770039758885-105968538.webp',
   catering: [
     'https://swigs.online/uploads/kozelsky/1770039736918-802731963.webp',
     'https://swigs.online/uploads/kozelsky/1770039737276-978932392.webp',
@@ -47,8 +46,6 @@ const HomeV5 = () => {
       theCaterer: 'Le Traiteur',
       theBus: 'Le Bus',
       welcomeOnBoard: 'Bienvenue à bord',
-      customService: 'Service sur-mesure',
-      ourHall: 'Notre salle',
     },
     de: {
       contactUs: 'Kontaktieren Sie uns',
@@ -56,8 +53,6 @@ const HomeV5 = () => {
       theCaterer: 'Der Caterer',
       theBus: 'Der Bus',
       welcomeOnBoard: 'Willkommen an Bord',
-      customService: 'Maßgeschneiderter Service',
-      ourHall: 'Unser Saal',
     },
     en: {
       contactUs: 'Contact us',
@@ -65,8 +60,6 @@ const HomeV5 = () => {
       theCaterer: 'The Caterer',
       theBus: 'The Bus',
       welcomeOnBoard: 'Welcome on board',
-      customService: 'Custom service',
-      ourHall: 'Our hall',
     },
   };
 
@@ -76,48 +69,67 @@ const HomeV5 = () => {
     <>
       <SEOHead page="home" />
 
-      {/* Hero Section - Clean with 2 images */}
-      <section className="py-20 lg:py-32 bg-[#F2F5F7]">
-        <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Content */}
-            <div className="order-2 lg:order-1">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-secondary-900 mb-8 leading-[1.1]">
-                {t('home.hero.title')}
-              </h1>
-              <p className="text-secondary-600 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg">
-                {t('home.since2021.companyDesc')}
-              </p>
+      {/* Hero Section with Video */}
+      <section className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster={IMAGES.heroFallback}
+          >
+            <source src={IMAGES.heroVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+        </div>
+
+        <div className="container-site relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-7xl font-serif text-white mb-8 leading-tight">
+              {t('home.hero.title')}
+            </h1>
+            <div className="flex flex-wrap gap-5">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 px-10 py-5 bg-[#ffcd57] text-secondary-900 rounded-full hover:bg-[#f5c342] transition-all font-semibold text-lg shadow-lg shadow-[#ffcd57]/30"
+                className="inline-flex items-center gap-3 px-10 py-4 bg-white text-secondary-900 rounded-full hover:bg-accent-400 hover:text-white transition-all font-medium"
               >
                 {c.contactUs}
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </Link>
-            </div>
-
-            {/* Hero Images */}
-            <div className="order-1 lg:order-2 grid grid-cols-2 gap-6">
-              <img
-                src={IMAGES.hero[0]}
-                alt="Kozelsky Catering"
-                className="w-full aspect-[3/4] object-cover rounded-3xl shadow-2xl"
-              />
-              <img
-                src={IMAGES.hero[1]}
-                alt="Kozelsky Service"
-                className="w-full aspect-[3/4] object-cover rounded-3xl shadow-2xl mt-12"
-              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Depuis 2021 - Notre Entreprise */}
-      <section className="py-28 lg:py-36 bg-white">
+      <section className="py-32 bg-cream">
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Content */}
+            <div>
+              <p className="text-accent-600 uppercase tracking-[0.3em] text-sm mb-6">Kozelsky Catering</p>
+              <h2 className="text-5xl md:text-6xl font-serif text-secondary-900 mb-10">{t('home.since2021.title')}</h2>
+
+              <div className="mb-10">
+                <h3 className="text-2xl font-serif text-secondary-900 mb-4">{t('home.since2021.ourCompany')}</h3>
+                <p className="text-secondary-600 leading-relaxed text-lg">
+                  {t('home.since2021.companyDesc')}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-serif text-secondary-900 mb-4">{t('home.since2021.ourValues')}</h3>
+                <p className="text-secondary-600 leading-relaxed text-lg">
+                  {t('home.since2021.valuesDesc')}
+                </p>
+                <p className="text-secondary-600 leading-relaxed text-lg mt-4">
+                  {t('home.since2021.listenDesc')}
+                </p>
+              </div>
+            </div>
+
             {/* Images Grid */}
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
@@ -140,23 +152,100 @@ const HomeV5 = () => {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Le Traiteur Card */}
+      <section className="py-32 bg-white">
+        <div className="container-site">
+          <div className="bg-cream p-12 lg:p-16 rounded-3xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-accent-600 uppercase tracking-[0.3em] text-sm mb-6">{c.ourServices}</p>
+                <h2 className="text-4xl lg:text-5xl font-serif text-secondary-900 mb-6">
+                  {t('home.caterer.title')}
+                </h2>
+                <p className="text-secondary-600 text-lg leading-relaxed mb-8">
+                  {t('home.caterer.desc')}
+                </p>
+                <Link
+                  to="/catering"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-secondary-900 text-white rounded-full hover:bg-accent-600 transition-colors font-medium"
+                >
+                  {t('cta.discover')}
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+              <div className="relative">
+                <img
+                  src={IMAGES.catering[0]}
+                  alt="Le Traiteur"
+                  className="w-full aspect-[4/3] object-cover rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sur-mesure */}
+      <section className="py-32 bg-cream">
+        <div className="container-site">
+          <div className="max-w-4xl">
+            <p className="text-accent-600 uppercase tracking-[0.3em] text-sm mb-6">{c.ourServices}</p>
+            <h2 className="text-5xl md:text-6xl font-serif text-secondary-900 mb-8">{t('home.custom.title')}</h2>
+            <h3 className="text-2xl font-serif text-accent-600 mb-8">
+              {t('home.custom.subtitle')}
+            </h3>
+            <p className="text-secondary-600 leading-relaxed text-lg mb-4">
+              {t('home.custom.desc')}
+            </p>
+            <p className="text-secondary-600 text-lg">
+              {t('home.custom.minPersons')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Bienvenue à la maison */}
+      <section className="py-32 bg-white">
+        <div className="container-site">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Images */}
+            <div className="grid grid-cols-2 gap-6">
+              <img
+                src={IMAGES.welcome[0]}
+                alt="Événements"
+                className="w-full aspect-[3/4] object-cover rounded-3xl"
+              />
+              <img
+                src={IMAGES.welcome[1]}
+                alt="Événements"
+                className="w-full aspect-[3/4] object-cover rounded-3xl mt-12"
+              />
+            </div>
 
             {/* Content */}
             <div className="lg:pl-8">
-              <p className="text-[#060097] uppercase tracking-[0.3em] text-sm font-semibold mb-6">Kozelsky Catering</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-secondary-900 mb-10 leading-tight">{t('home.since2021.title')}</h2>
+              <h2 className="text-5xl md:text-6xl font-serif text-secondary-900 mb-12">{t('home.welcome.title')}</h2>
 
               <div className="mb-10">
-                <h3 className="text-2xl font-serif text-secondary-900 mb-4">{t('home.since2021.ourCompany')}</h3>
+                <h3 className="text-2xl font-serif text-secondary-900 mb-4">{t('home.welcome.subtitle')}</h3>
+                <p className="text-secondary-600 leading-relaxed text-lg mb-4">
+                  {t('home.welcome.hallDesc')}
+                </p>
                 <p className="text-secondary-600 leading-relaxed text-lg">
-                  {t('home.since2021.companyDesc')}
+                  {t('home.welcome.accessDesc')}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-serif text-secondary-900 mb-4">{t('home.since2021.ourValues')}</h3>
+                <h3 className="text-2xl font-serif text-secondary-900 mb-4">
+                  {t('home.welcome.eventsTitle')}
+                </h3>
                 <p className="text-secondary-600 leading-relaxed text-lg">
-                  {t('home.since2021.valuesDesc')}
+                  {t('home.welcome.eventsDesc')}
                 </p>
               </div>
             </div>
@@ -164,78 +253,37 @@ const HomeV5 = () => {
         </div>
       </section>
 
-      {/* Services Cards */}
-      <section className="py-28 lg:py-36 bg-[#F2F5F7]">
+      {/* Nos Services CTA */}
+      <section className="py-32 bg-cream">
         <div className="container-site">
-          <div className="text-center mb-16">
-            <p className="text-[#060097] uppercase tracking-[0.3em] text-sm font-semibold mb-6">{c.ourServices}</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-secondary-900">{t('home.services.title')}</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Le Traiteur */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={IMAGES.catering[0]}
-                  alt="Le Traiteur"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-serif text-secondary-900 mb-4">{c.theCaterer}</h3>
-                <p className="text-secondary-600 mb-6">{t('home.caterer.desc')}</p>
-                <Link
-                  to="/catering"
-                  className="inline-flex items-center gap-2 text-[#060097] font-semibold hover:gap-4 transition-all"
-                >
-                  {t('cta.discover')}
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Sur-mesure */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={IMAGES.catering[1]}
-                  alt="Sur-mesure"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-serif text-secondary-900 mb-4">{c.customService}</h3>
-                <p className="text-secondary-600 mb-6">{t('home.custom.desc')}</p>
+          <div className="bg-white p-12 lg:p-16 rounded-3xl shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-accent-600 uppercase tracking-[0.3em] text-sm mb-6">{c.ourServices}</p>
+                <h2 className="text-4xl lg:text-5xl font-serif text-secondary-900 mb-6">
+                  {t('home.services.title')}
+                </h2>
+                <p className="text-secondary-600 text-lg leading-relaxed mb-8">
+                  {t('home.services.desc')}
+                </p>
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-2 text-[#060097] font-semibold hover:gap-4 transition-all"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-secondary-900 text-white rounded-full hover:bg-accent-600 transition-colors font-medium"
                 >
                   {t('cta.discover')}
                   <ArrowRight size={18} />
                 </Link>
               </div>
-            </div>
-
-            {/* La Salle */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={IMAGES.welcome[0]}
-                  alt="Notre salle"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-serif text-secondary-900 mb-4">{c.ourHall}</h3>
-                <p className="text-secondary-600 mb-6">{t('home.welcome.hallDesc')}</p>
-                <Link
-                  to="/nous"
-                  className="inline-flex items-center gap-2 text-[#060097] font-semibold hover:gap-4 transition-all"
-                >
-                  {t('cta.discover')}
-                  <ArrowRight size={18} />
-                </Link>
+              <div className="grid grid-cols-2 gap-4">
+                {IMAGES.impressions.map((src, index) => (
+                  <div key={index} className="overflow-hidden rounded-2xl">
+                    <img
+                      src={src}
+                      alt={`Service ${index + 1}`}
+                      className="w-full aspect-square object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -243,27 +291,27 @@ const HomeV5 = () => {
       </section>
 
       {/* Bus 11-97 Promo */}
-      <section className="py-28 lg:py-36 bg-secondary-900 text-white">
+      <section className="py-32 bg-secondary-900 text-white">
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
               <img
                 src={IMAGES.logo1197}
                 alt="11-97.ch"
-                className="h-20 lg:h-28 mb-10 mx-auto lg:mx-0 brightness-0 invert"
+                className="h-20 lg:h-24 mb-8 mx-auto lg:mx-0 brightness-0 invert"
               />
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-8">
+              <h2 className="text-5xl md:text-6xl font-serif mb-8">
                 {c.theBus}
               </h2>
-              <p className="text-secondary-300 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
+              <p className="text-secondary-300 text-lg leading-relaxed mb-10">
                 {t('home.bus.desc')}
               </p>
               <Link
                 to="/bus-11-97"
-                className="inline-flex items-center gap-3 px-10 py-5 bg-[#ffcd57] text-secondary-900 rounded-full hover:bg-[#f5c342] transition-colors font-semibold text-lg"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-secondary-900 rounded-full hover:bg-accent-400 hover:text-white transition-colors font-medium"
               >
                 {c.welcomeOnBoard}
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </Link>
             </div>
 
@@ -284,7 +332,7 @@ const HomeV5 = () => {
       </section>
 
       {/* Partners */}
-      <section className="py-24 bg-white">
+      <section className="py-28 bg-cream">
         <div className="container-site">
           <h2 className="text-center text-sm uppercase tracking-[0.3em] text-secondary-500 mb-16">
             {t('home.partners')}
@@ -296,7 +344,7 @@ const HomeV5 = () => {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-6 bg-[#F2F5F7] rounded-2xl opacity-70 hover:opacity-100 transition-all hover:shadow-lg"
+                className="p-6 bg-white rounded-2xl opacity-60 hover:opacity-100 transition-all hover:shadow-lg"
               >
                 <img
                   src={partner.logo}
@@ -310,18 +358,18 @@ const HomeV5 = () => {
       </section>
 
       {/* CTA Contact */}
-      <section className="py-28 lg:py-36 bg-[#F2F5F7]">
+      <section className="py-32 bg-white">
         <div className="container-site text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-secondary-900 mb-8">{t('home.questions.title')}</h2>
-          <p className="text-secondary-600 mb-12 max-w-xl mx-auto text-lg lg:text-xl">
+          <h2 className="text-5xl md:text-6xl font-serif text-secondary-900 mb-8">{t('home.questions.title')}</h2>
+          <p className="text-secondary-600 mb-12 max-w-xl mx-auto text-lg">
             {t('home.questions.desc')}
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-3 px-12 py-6 bg-[#ffcd57] text-secondary-900 rounded-full hover:bg-[#f5c342] transition-all font-semibold text-lg shadow-lg shadow-[#ffcd57]/30"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-secondary-900 text-white rounded-full hover:bg-accent-600 transition-all font-medium"
           >
             {t('cta.contact')}
-            <ArrowRight size={20} />
+            <ArrowRight size={18} />
           </Link>
         </div>
       </section>
