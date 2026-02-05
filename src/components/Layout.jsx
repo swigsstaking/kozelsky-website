@@ -47,9 +47,9 @@ const Layout = ({ children }) => {
       path: '/',
       submenu: [
         { name: 'Original', path: '/' },
+        { name: 'V2', path: '/v2' },
         { name: 'V3', path: '/v3' },
         { name: 'V4 (Rounded)', path: '/v4' },
-        { name: 'V5 (Kozelsky)', path: '/v5' },
       ],
     },
     {
